@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Job Tracker — Control Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">JT</span>
+    <div>
+      <h1>Job Tracker</h1>
+      <p class="brand-sub">Search automation &amp; application board</p>
+    </div>
+  </div>
+
+  <div class="stats" id="stats">
+    <!-- filled by app.js -->
+  </div>
+
+  <div class="actions">
+    <button id="fetchBtn" class="btn btn-primary">Fetch new jobs</button>
+    <button id="resumeBtn" class="btn btn-ghost">Resumes: <span id="activeResumeLabel">none</span></button>
+  </div>
+</header>
+
+<main class="board" id="board">
+  <!-- columns filled by app.js -->
+</main>
+
+<footer class="statusline" id="statusline">Ready.</footer>
+
+<!-- Resume manager modal -->
+<div class="modal-backdrop" id="resumeModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h2>Your resumes</h2>
+      <button class="modal-close" id="closeResumeModal">&times;</button>
+    </div>
+    <p class="modal-hint">Keep several resumes and switch which one scores your jobs. Activating rescoring is instant.</p>
+
+    <div id="resumeList" class="resume-list"><!-- filled by app.js --></div>
+
+    <div class="resume-add">
+      <div class="resume-add-head">Add a new resume</div>
+      <input id="newResumeName" type="text" placeholder="Name (e.g. Backend resume)" class="text-input" />
+      <textarea id="resumeText" rows="7" placeholder="Paste resume text here..."></textarea>
+
+      <div class="modal-row">
+        <label class="file-label">
+          Upload PDF instead
+          <input type="file" id="resumeFile" accept="application/pdf" hidden />
+        </label>
+        <button id="saveResumeBtn" class="btn btn-primary">Save as new &amp; activate</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Job detail modal -->
+<div class="modal-backdrop" id="jobModal">
+  <div class="modal" id="jobModalContent">
+    <!-- filled by app.js -->
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
