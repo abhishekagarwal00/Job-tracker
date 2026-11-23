@@ -1,5 +1,6 @@
 # Job Tracker — Automated Job Search & Application Board
 
+🔗 Live demo: https://job-tracker-tun2.onrender.com(may take ~50s to wake up)
 A self-hosted tool that pulls live job postings from public job APIs, scores each
 one against your resume, and lets you track applications through a kanban-style
 board (Saved → Applied → Interview → Offer → Rejected).
